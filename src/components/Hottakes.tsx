@@ -24,7 +24,7 @@ function Hottakes() {
   });
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="lg:grid lg:grid-cols-4 gap-4 block">
       {hottakes.map((hottake: any) => (
         <Hottake data={hottake} />
       ))}
