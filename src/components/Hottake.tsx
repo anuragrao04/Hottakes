@@ -6,14 +6,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "./ui/button";
-import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import { useLocalStorage } from "@uidotdev/usehooks";
-import { useHottakeStore } from "@/lib/useHottakeStore";
 import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 
-function Hottake({ data }) {
-  const [uid] = useLocalStorage("uid", null);
+function Hottake({ data }: any) {
+  const uid = localStorage.getItem("uid");
   async function handleClick() {
     const washingtonRef = doc(db, "hottakes", data.id);
     const check = data.upvotedUIDs.includes(uid);

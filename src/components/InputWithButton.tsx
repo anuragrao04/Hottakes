@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { useLocalStorage } from "@uidotdev/usehooks";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
 export function InputWithButton() {
   const [first, setfirst] = useState("");
-  const [uid] = useLocalStorage("uid", null);
+  const uid = localStorage.getItem("uid");
 
   async function saveHottake() {
     try {
