@@ -22,7 +22,7 @@ function Hottake({ data }: any) {
   }
 
   return (
-    <Card>
+    <Card className="lg: m-2">
       <CardHeader>
         <CardTitle>🔥</CardTitle>
       </CardHeader>
